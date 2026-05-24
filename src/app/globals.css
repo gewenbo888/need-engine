@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #070510;
+  --ember: #ff9d3c;
+  --flame: #ff3d80;
+  --mind: #a855f7;
+  --signal: #2dd4ee;
+  --ghost: #e9e3f7;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+  color: var(--ghost);
+}
+
+body {
+  background-color: #070510;
+  background-image:
+    radial-gradient(ellipse 1100px 640px at 12% -8%, rgba(255, 157, 60, 0.16), transparent 60%),
+    radial-gradient(ellipse 980px 560px at 90% 4%, rgba(255, 61, 128, 0.13), transparent 62%),
+    radial-gradient(ellipse 1240px 760px at 50% 118%, rgba(168, 85, 247, 0.16), transparent 60%),
+    radial-gradient(ellipse 760px 520px at 80% 90%, rgba(45, 212, 238, 0.08), transparent 64%);
+  font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.003em;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(255, 61, 128, 0.4); color: #fff; }
+
+/* geometric, cybernetic display — behavioral-systems gravitas */
+.display { font-family: "Sora", ui-sans-serif, system-ui, sans-serif; font-weight: 700; letter-spacing: -0.018em; }
+/* warm literary serif — for the long-form, philosophical voice */
+.serif { font-family: "Spectral", ui-serif, Georgia, serif; font-weight: 400; }
+.zh { font-family: "Noto Serif SC", serif; font-weight: 500; }
+.label-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.26em; text-transform: uppercase; font-size: 0.62rem; color: #ffd6a1;
+}
+.mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* glowing signal text — the neon of want */
+.ember-text {
+  color: #ffd6a1;
+  text-shadow: 0 0 24px rgba(255, 157, 60, 0.7), 0 0 70px rgba(217, 112, 29, 0.34);
+}
+.flame-text {
+  color: #ff9fc4;
+  text-shadow: 0 0 22px rgba(255, 61, 128, 0.65), 0 0 60px rgba(214, 47, 106, 0.3);
+}
+.mind-text {
+  color: #d8b4fe;
+  text-shadow: 0 0 22px rgba(168, 85, 247, 0.65);
+}
+.signal-text {
+  color: #a8eefb;
+  text-shadow: 0 0 22px rgba(45, 212, 238, 0.6);
+}
+
+/* holographic instrument panel — neon glass on violet ink */
+.holo {
+  background: linear-gradient(155deg, rgba(31, 22, 54, 0.62), rgba(9, 6, 20, 0.92));
+  border: 1px solid rgba(255, 214, 161, 0.1);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.holo:hover { border-color: rgba(255, 107, 163, 0.42); box-shadow: 0 0 44px -16px rgba(255, 61, 128, 0.5); }
+
+/* terminal panel — sharper behavioral-dashboard surface */
+.terminal {
+  background: linear-gradient(180deg, rgba(22, 15, 40, 0.9), rgba(9, 6, 20, 0.96));
+  border: 1px solid rgba(168, 85, 247, 0.16);
+  box-shadow: inset 0 1px 0 rgba(216, 180, 254, 0.07);
+}
+
+/* spectrum divider — ember → flame → mind → signal */
+.rule-neon {
+  background: linear-gradient(90deg, transparent, rgba(255,157,60,0.7) 14%, rgba(255,61,128,0.6) 44%, rgba(168,85,247,0.6) 70%, rgba(45,212,238,0.5) 90%, transparent);
+}
+
+/* faint behavioral grid backdrop */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(216, 180, 254, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(216, 180, 254, 0.045) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+/* flowing attention streams / motivational network edges */
+@keyframes flow { to { stroke-dashoffset: -36; } }
+.flow { stroke-dasharray: 4 8; animation: flow 1.4s linear infinite; }
+
+/* emotional pulse — the heartbeat of craving */
+@keyframes pulseGlow { 0%,100% { opacity: 0.42; } 50% { opacity: 1; } }
+.pulse { animation: pulseGlow 2.2s ease-in-out infinite; }
+
+@keyframes craveBeat { 0%,100% { transform: scale(1); opacity: 0.7; } 45% { transform: scale(1.14); opacity: 1; } }
+.crave-beat { animation: craveBeat 1.6s ease-in-out infinite; }
+
+@keyframes drift { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+.drift { animation: drift 7s ease-in-out infinite; }
+
+@keyframes riseIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+.rise-in { animation: riseIn 0.9s cubic-bezier(0.2,0.7,0.2,1) both; }
+.lang-fade { animation: riseIn 0.42s ease both; }
+
+/* scanning behavioral ticker */
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.ticker { animation: ticker 42s linear infinite; }
+
+/* slow rotation for orbital desire loops */
+@keyframes spinslow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spinslow 26s linear infinite; transform-origin: center; }
+
+/* shimmer pass for neon accents */
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.shimmer {
+  background: linear-gradient(100deg, transparent 30%, rgba(255,159,196,0.5) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shimmer 3.4s linear infinite;
+}
+
+/* blinking caret */
+@keyframes blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+.caret { animation: blink 1s step-end infinite; }
+
+::-webkit-scrollbar { width: 10px; background: #070510; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #2a1838, #3a1f2e); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #ff3d80; }
